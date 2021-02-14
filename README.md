@@ -69,3 +69,7 @@ MAX_ROWS_FROM_CSV = float("inf")
 # Версия python 
 python3.8
 
+# Инструкция по работе с api
+- Возможные запросы: ['get_recommends/SKU','get_recommends/SKU/number_recommed]
+- Необходимо csv файл расположить в корне проекта и назвать 'sorted_recommends.csv'
+
