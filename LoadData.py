@@ -2,7 +2,13 @@ import csv
 import os
 
 
-def GetDataFromCsv(Path="/media/oleg/MARKOV_32/Работа/Поиск работы 2020/sorted_recommends.csv", MaxRows=float("inf")):
+def GetDataFromCsv(Path="./sorted_recommends.csv", MaxRows=float("inf")) -> dict:
+    """
+    Get data from csv file
+    Return dict. Example: {"sdf34Nds":"fdsf234m 0.9; sdfsrwer 0.6;"}
+    Path it is path to file csv
+    MsxRows it is how many rows from csv we get.
+    """
     DataFromCsv = {}
     if not os.path.exists(Path):
         raise FileNotFoundError
