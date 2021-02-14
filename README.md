@@ -66,4 +66,6 @@ PATH_TO_CSV = './sorted_recommends.csv'
 
 MAX_ROWS_FROM_CSV = float("inf")
 
+# Версия python 
+python3.8
 
