@@ -23,7 +23,7 @@ parser.add_argument('--max_rows_csv', default=config.MAX_ROWS_FROM_CSV, type=flo
                     help='max rows from csv load, default = infinity')
 args = parser.parse_args()
 ##############################CONSTANT##############################
-html_set = ['true', '1', 'ok', ]
+html_set = ['true', '1', 'ok', 'y']
 HOST = args.host
 PORT = args.port
 PATH_TO_CSV = args.path_to_csv
@@ -31,7 +31,7 @@ MAX_ROWS_CSV = args.max_rows_csv
 HTML = True if args.html.lower() in html_set else False
 ##############################ARGPARSE##############################
 #################################LOG################################
-DebugOn = ['1', 'true', 'y']
+DebugOn = ['true', '1', 'ok', 'y']
 logger = logging.getLogger('Eldarado_api_main')
 FORMAT = '%(asctime)s  %(name)s [%(levelname)s]: %(message)s'
 file_handler = logging.FileHandler('Eldarado_api_main.log', 'a', encoding='utf-8')
@@ -146,7 +146,7 @@ if __name__ == '__main__':
         # Get data from file csv and load to dict
         DataFromCsv = LoadData.GetDataFromCsv(PATH_TO_CSV, MAX_ROWS_CSV)
         logger.info(f"Data obtained")
-        # Run server for processing requets
+        # Run server for processing requests
         RunServer(HOST, PORT)
     except FileNotFoundError:
         logger.exception(f"Such file not founded:{PATH_TO_CSV}")
